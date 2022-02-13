@@ -1,0 +1,40 @@
+\documentclass[]{tepromec}	%Document class specification
+
+%-------------------
+% Preparatory files
+%-------------------
+\input{Preparatory_files/packages.tex}			%Packages
+\input{Preparatory_files/settings.tex}			%Settings
+\input{Preparatory_files/custom_commands.tex}	%New commands and environments
+
+%---------------------------------------
+% Frontmatter
+%---------------------------------------
+\input{Preparatory_files/information.tex} 	%Author and pre-text information
+
+\begin{document}
+\allowdisplaybreaks
+
+%---------------------------------------
+% Pre-text
+%---------------------------------------
+\input{Pretext/pretext_promec} 
+
+%---------------------------------------
+% Chapters
+%---------------------------------------
+\input{Chapters/chapter_1}
+\input{Chapters/chapter_2}
+               
+%---------------------------------------
+% Backmatter
+%---------------------------------------
+\input{Chapters/references}
+
+%\appendix
+%\input{Chapters/Appendix_FDS_discretization}
+%\input{Chapters/Appendix_time_analysis}
+%\input{Chapters/Appendix_multi_Taylor}
+%---------------------------------------
+
+\end{document}
