@@ -1,0 +1,172 @@
+% !TEX root = 0_0_TESE.tex
+% !TeX spellcheck = pt_BR
+%---------------------------------------
+\chapter{FUNDAMENTAÇÃO TEÓRICA}\label{cap:intro}
+
+Neste capítulo deve ser apresentado o embasamento técnico/científico que dá suporte ao trabalho a ser desenvolvido. Uma pesquisa que busque credibilidade jamais emprega o senso comum ou a falta de certeza. Deve-se embasar o trabalho em teorias científicas, observações empíricas e elaborações estatísticas. O capítulo de Fundamentação Teórica é, geralmente, dividido em diversas seções e sub-seções de modo a englobar o tema da pesquisa em sua totalidade.
+
+\section{Teses e Dissertações do PROMEC}
+
+A seguir são apresentadas as disposições gerais quanto a formatação de teses e dissertações. O presente modelo foi construído empregando a editoração em {\LaTeX}. O leitor perceberá que para propiciar uma melhor compreensão da sintaxe empregada, sempre que necessário, fragmentos do código fonte utilizado são apresentados.
+
+A distribuição \textit{{\TeX} Live 2016} \citep{rahtz2016livetex} foi empregada para preparação deste documento. Qualquer editor {\TeX} deve ser compatível com este modelo. Contudo, somente os editores \textit{{\TeX}Maker} (v.4.5 \& Qt4) e \textit{{\TeX}Studio} (v.2.12.2 \& Qt5) foram testados.
+
+\subsection{Recomendações Gerais}
+
+As teses e dissertações devem empregar a fonte serifada Times New Roman, ou sua equivalente em {\TeX}: Computer Modern. O tamanho de fonte deve ser definido como 12 pt com um espaçamento entre linhas de 1,5 (um e meio). Ao longo do texto será usado o estilo simples, reservando-se o \textbf{negrito} para os títulos e subtítulos e o \textit{itálico} para realce de novos termos ou de termos em língua estrangeira. Deve-se empregar papel em tamanho A4, utilizando apenas um lado da folha. A versão final da tese/dissertação deve ser impressa e encadernada em capa dura de cor preta, com gravações douradas na capa e na lombada, conforme modelo definido pelo PROMEC. O texto deve ser escrito em linguagem impessoal de acordo com a norma culta e em conformidade com a reforma ortográfica da língua portuguesa de 2009 \citep{bechara2012moderna}.
+
+\subsection{Paginação}
+
+Todas as páginas pré-textuais devem ser contadas para numeração (incluindo capa). Contudo, somente a partir da contra-capa (inclusa) se inicia a numeração das páginas pré-textuais. Essa numeração deve empregar algarismos romanos em caixa baixa e centralizados na base da página.
+
+As páginas referentes aos capítulos do corpo do texto devem ser numeradas utilizando algarismos arábicos, em sequência progressiva crescente, excluindo-se todas as páginas pré-textuais. A numeração deve estar localizada no canto superior direito a 2 cm da borda da página. Normalmente, a primeira página textual a ser numerada é a da Introdução, a qual inicia a contagem no número 1 (um). Anexos e/ou apêndices devem ser numerados em continuidade as páginas textuais, sem reiniciar a contagem.
+
+Os capítulos devem ser numerados utilizando algarismos arábicos. Suas seções e sub-seções seguem a mesma sequência de numeração, empregando pontos (.) como separador. Os títulos dos capítulos devem ser escritos em CAIXA ALTA e em \textbf{negrito}. Títulos de seções e sub-seções também empregam \textbf{negrito}, porém somente a primeira letra de cada palavra é escrita em CAIXA ALTA.
+
+\subsection{Margens}
+
+Conforme a ABNT, as margens, para trabalhos científicos devem ser:
+	
+\begin{enumerate}[label = {\alph*}) ,itemindent = 0.8 cm]
+	\item margem superior: 3 cm
+	\item margem inferior: 2 cm
+	\item margem esquerda: 3 cm
+	\item margem direita: 2 cm
+\end{enumerate}
+
+\subsection{Citações}
+
+A citação de trabalhos científicos deve ser realizada de modo a referenciar o autor (fonte) de determinada afirmação (fato, experimento, teoria, ...). Citações devem ser compreendidas no corpo do texto. Recomenda-se evitar o uso de notas de rodapé\footnote{Notas de rodapé devem apresentar informações de fim meramente complementar. Essas notas são posicionados na margem inferior da página onde ocorrem.} para esta finalidade. As citação podem ser realizadas de forma direta ou indireta.
+
+\subsubsection{Citações Diretas}
+
+As citações diretas apresentam o nome do autor seguido pelo ano de sua respectiva publicação. Exemplos deste tipo de citação são enumerados a seguir:
+
+\begin{enumerate}[label = {\roman*} - ,itemindent = 0.8 cm]
+	\item ``... conforme apresentado por \citealp{dantzig1963linear}, a programação linear...''
+	\item ``... de acordo com \citealp{haftka1991elements}, o método de otimização...''
+	\item ``Os resultados obtidos por \citealp{deleon2015stress} demonstram...''
+\end{enumerate}
+
+Quando o trabalho a ser referenciado possuir mais de dois autores (Item iii), a citação é realizada apresentando o nome do autor principal seguido da expressão “et alli” (ou abreviadamente “et al.”) e a data. Citações diretas podem ser obtidas empregando o comando \verb|\citealp{}|, onde o termo entre chaves deve apresentar o identificador de uma referência previamente contida no arquivo de bibliografias BibTeX\footnote{No presente modelo, o nome do arquivo de referências é: ``bibliografia{\_}template.bib''.}. Como exemplo, o fragmento de código que deve ser inserido no arquivo BibTeX (ver Apêndice~\ref{apendixA}) de modo a produzir a citação do Item ii é dado por:
+
+\begin{lstlisting}[language=TeX, frame=lines, lineskip={-0.75pt}, basicstyle=\scriptsize]
+	@book{haftka1991elements,
+		title={Elements of Structural Optimization},
+		author={Haftka, R. T. and G{\"u}rdal, Z.},
+		isbn={9780792315056},
+		lccn={91037690},
+		series={Solid Mechanics and Its Applications},
+		volume={11},
+		edition={3rd},
+		url={https://books.google.com.br/books?id=CzgIpexeh7UC},
+		year={1991},
+		address={Dordrecht},
+		publisher={Kluwer Academic Publishers}
+	}
+\end{lstlisting}
+
+\subsubsection{Citações Indiretas}
+
+Citações indiretas apresentam o autor de determinada referência sem fazer menção a ele explicitamente. Deste modo, a citação é realizada envolvendo por colchetes o nome do autor seguido pela data. Alguns exemplos dessa técnica são enumerados da seguinte forma:
+
+\begin{enumerate}[label = {\roman*} - ,itemindent = 0.8 cm]
+	\item ``... foi o trabalho pioneiro de \citealp{turner1956stiffness} que ajudou a cunhar o método através de sua aplicação em um problema de engenharia \citep{bathe1996finite}.''
+	\item ``... definido como o Método dos Elementos Finitos, MEF \citep{hughes2012finite}.''
+	\item ``... conforme apresentado por diferentes autores \citep{reddy2006introduction, zienkiewicz2005finite, bathe1996finite}.''
+	\item ``... essa formulação para contato \citep{man1993incremental} também é empregada por outros trabalhos presentes na literatura \citep{man1993engineering}.''
+\end{enumerate}
+
+Esse tipo de citação é obtido empregando o comando \verb|\citep{}|. Note a existência de dois trabalhos do mesmo autor(es) publicados no mesmo ano (Item iv). Em casos como esse, deve-se proceder adicionando caracteres latinos (em ordem alfabética) diretamente após a data de cada citação. 
+
+\subsection{Transcrições}
+
+Em casos de citação de trechos parciais ou completos de algum trabalho, deve-se proceder transcrevendo o texto desejado em parágrafo próprio envolvendo o texto por aspas (`` ''). Nessas situações a referência pode ser feita de forma direta ou indireta. A seguinte transcrição\footnote{Tradução livre do texto originalmente publicado em Inglês.} de um pronunciamento do astronauta John Glenn\footnote{John Glenn foi o segundo astronauta a entrar em órbita terrestre, este feito foi realizado em 1962 a bordo da cápsula espacial Friendship 7} exemplifica esse tipo de citação:
+
+
+``Acho que a pergunta mais frequente que escuto é: `Quando você estava sentado naquela cápsula ouvindo a contagem regressiva, como você se sentiu?' Bem, a resposta é fácil. Eu me senti exatamente como você se sentiria caso estivesse se preparando para o lançamento sabendo que você está sentado em cima de dois milhões de peças - todas construídas pelo licitante que ofereceu o menor preço em um contrato do governo.'' \citep{kranz2009failure}
+
+\subsection{Equações}
+
+Equações devem ser apresentadas com alinhamento centralizado horizontalmente. Todas as equações que vierem a ser utilizadas/citadas posteriormente a sua aparição no texto devem ser numeradas. Essa numeração empregará algarismos arábicos em ordem crescente. O formato da numeração seguirá a sequência de numeração do capítulo em que a equação é apresentada e será compreendida entre parênteses (Capítulo.Equação). Por fazerem parte do texto, equações não devem simplesmente surgir ao acaso, elas precisam ser introduzidas no contexto no trabalho e estarão sujeitas as regras de pontuadas.
+
+Como exemplo, é apresentada a formulação de um problema de otimização que busca minimizar o funcional $f(\vb{x})$ com respeito ao vetor de variáveis de projeto $\vb{x}$. Matematicamente, esse problema pode ser apresentado como
+\begin{equation} \label{eq:otim}
+	\begin{aligned}
+		& \underset{\vb{x}}{\text{minimizar}}
+		& & f(\vb{x}) \\
+		& \text{sujeito a}
+		&& g_{\alpha}(\vb{x}) = 0, \quad \alpha = 1,..., n\\
+		& && h_{\beta}(\vb{x}) \leq 0, \quad \beta = 1,..., m
+	\end{aligned}
+\end{equation}
+
+\noindent onde $g_{\alpha}(\vb{x})$ representa as $n$ restrições de igualdade e $h_{\beta}(\vb{x})$ são as $m$ restrições de desigualdade do problema \citep{arora2011introduction,bendsoe2013topology}. Perceba que todos os símbolos empregados devem ser definidos após sua primeira aparição no texto. Além disso, é obrigatória a existência de uma completa Lista de Símbolos.
+
+Quando a apresentação dos símbolos presentes em determinada equação seja necessária logo após a ocorrência da equação, deve-se começar o parágrafo seguinte à equação sem utilizar endentação de primeira linha. Um exemplo desse tipo de situação é visível na Equação~\ref{eq:otim}, onde a não endentação é realizada empregando o comando \verb|\noindent|.
+
+Referências a equações só devem ser realizadas uma vez que esta tiver sido apresentada no texto, i.e., a referência não pode tratar uma equação inédita aos olhos do leitor. Ao se referenciar equações e demais itens do corpo do texto (figuras, tabelas, capítulos), deve-se citar o item em questão empregando sua Inicial em CAIXA ALTA seguido de sua respectiva numeração. Como exemplo, a Equação~\ref{eq:otim} foi produzida empregando a seguinte sintaxe:
+
+\begin{lstlisting}[language=TeX, frame=lines, lineskip={-0.75pt}, basicstyle=\scriptsize]
+\begin{equation} \label{eq:otim}
+	\begin{aligned}
+		& \underset{\vb{x}}{\text{minimizar}}
+		& & f(\vb{x}) \\
+		& \text{sujeito a}
+		&& g_{\alpha}(\vb{x}) = 0, \quad \alpha = 1,..., n\\
+		& && h_{\beta}(\vb{x}) \leq 0, \quad \beta = 1,..., m
+	\end{aligned}
+\end{equation}
+\end{lstlisting}
+
+Um exemplo de equação com uma sintaxe mais simples é apresentado pela lei de Hooke generalizada para um material elástico em um meio continuo. Sendo expressa como
+
+\begin{equation}\label{eq:hooke}
+	\vb{\sigma} = \vb{c} \vb{\epsilon},
+\end{equation}
+	
+\noindent onde $\vb{c}$ é um tensor de quarta ordem das propriedades constitutivas do material e os tensores de segunda ordem $\vb{\sigma}$ e $\vb{\epsilon}$ equivalem aos tensores de tensões e deformações, respectivamente. A Equação~\ref{eq:hooke} também pode ser reescrita na notação de Einstein resultando em
+
+\begin{equation}\label{eq:hooke_einstein}
+	\sigma_{ij} = c_{ijkl} \epsilon_{kl}.
+\end{equation}
+
+As Equações~\ref{eq:hooke}~e~\ref{eq:hooke_einstein} foram geradas empregando a seguinte sintaxe:
+
+\begin{lstlisting}[language=TeX, frame=lines, lineskip={-0.75pt}, basicstyle=\scriptsize]
+\begin{equation}\label{eq:hooke}
+	\vb{\sigma} = \vb{c} \vb{\epsilon},
+\end{equation}
+
+\begin{equation}\label{eq:hooke_einstein}
+	\sigma_{ij} = c_{ijkl} \epsilon_{kl}.
+\end{equation}
+\end{lstlisting}
+
+Quando for necessário apresentar matrizes ou vetores em forma expandida, pode-se empregar os comandos \verb|matrix|, \verb|pmatrix|, \verb|bmatrix|, \verb|vmatrix| ou \verb|Vmatrix|. Os quais são compreendidos pelo pacote \verb|amsmath| e se diferenciam pela forma como envolvem a matriz (parênteses, colchetes, traços,...). Alguns exemplos do emprego desses comandos são apresentados na Equação~\ref{eq:matrix}.
+
+\begin{equation}\label{eq:matrix}
+	\Vert \vb{M}\cdot\vb{v}\Vert = \sqrt{ \left(
+	\begin{bmatrix}
+		x_{11}  & x_{12} & \dots	& x_{1n} \\
+		x_{21}  & x_{22} & \dots	& x_{2n} \\
+		\vdots	& \vdots & \ddots	& \vdots \\
+		x_{m1}	& x_{m2} & \dots	& x_{mn}
+	\end{bmatrix}
+	\cdot
+	\begin{pmatrix}
+		y_{1} \\
+		y_{2} \\
+		\vdots\\
+		y_{n}	
+	\end{pmatrix} \right)^2}
+	=
+	\begin{Vmatrix}
+		r_{1} \\
+		r_{2} \\
+		\vdots\\
+		r_{n}	
+	\end{Vmatrix}.
+\end{equation}
+
+Sempre que alguma grandeza for explicitada no texto, as unidades devem ser apresentadas seguindo o Sistema Internacional (SI). Em casos excepcionais, nos quais se faz necessário o emprego de unidades em sistemas que não o SI, a grandeza equivalente no SI deve ser apresentada. Vide exemplo: ``... foram empregadas placas metálicas com meia polegada de espessura (12,7 mm).''
