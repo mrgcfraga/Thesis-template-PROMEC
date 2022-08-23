@@ -1,0 +1,79 @@
+%########################################
+%Include mandatory entries for the class
+%########################################
+% Thesis title
+\DocTitulo{SEU TÍTULO EM PORTUGUÊS}
+
+% Authors name
+\DocAutor{Nome do Autor}
+
+% Previous title (ex.: Engenheiro | Mestre)
+\DocAutorTitle{Mestre em Engenharia Mecânica}
+
+% Short Date (month and year)
+\DocData{Mês de ano} % Ex.: Abril de 2056
+
+% Short Date in English (month and year)
+\DocDataEng{Month Year} % Ex.: April 2056
+
+% Full Date in portuguese (day, month and year)
+\DocDataB{Dia de mês de ano} % Ex.: 10 de Abril de 2056
+
+% Identify as: Mestre or Doutor or Qualifica (IMPORTANT: exactly as written in ex.)
+\DocMScouDr{Doutor}
+
+% Advisors name
+\DocOrientador{Prof.~Dr.~Nome Orientador}
+
+% Number of co-advisors (NO co-advisor = 0 (zero))
+\DocNoCoorientador{1}
+\DocCoorientador{Prof.~Dr.~Nome Coorientador}
+
+% Name of co-advisors 
+% If more than 1 co-advisor, employ \\ as separator
+% ex.: \DocCoorientador{co-orientador1\\co-orientador2\\co-orientador3}
+%	\DocCoorientador{Prof. Dr. Nome do Co-orientador}
+
+% Area (ex.: Mec\^{a}nica dos S\'{o}lidos)
+\DocAreaConc{Fenômenos de Transporte}
+
+% Thesis board
+% employ (\\ \vfill) as separator (witout the paranthesis)
+% ex.: banca1\\ \vfill banca2\\ \vfill...
+\DocBanca{
+	Prof.~Dr.~Banca 1\dotfill Instituição	\\ \vfill 
+	Prof.~Dr.~Banca 2\dotfill Instituição	\\ \vfill 
+	Prof.~Dr.~Banca 3\dotfill Instituição
+	}
+
+% PROMEC coordinator
+\DocCoord{Prof.~Dr.~Felipe Roman Centeno}
+
+% Thesis status (use Avaliacao or Aprovado)
+\DocDef{Aprovado}
+ 
+%%----------
+%%	RESUMO
+%%----------
+\DocResumo{\input{Pretext/resumo}}
+\DocPalavrasChave{Palavra 1; Palavra 2; Palavra 3; Palavra 4; Palavra 5.\vspace{-\baselineskip}}
+
+%%------------
+%%	ABSTRACT
+%%------------
+% Thesis title translated to English
+\DocTituloIng{EVALUATION AND IMPROVEMENT OF MODELS FOR TURBULENCE-RADIATION INTERACTION IN TURBULENT REACTIVE FLOWS}
+\DocAbstract{\input{Pretext/abstract}}
+\DocKeywords{Turbulence-radiation interaction;  modeling; Radiative emission; Large Eddy Simulation; Large-scale pool fires.\vspace{-2\baselineskip}}
+
+%---------------------------------------
+% EXTRA ABSTRACT - OPTIONAL
+%---------------------------------------
+% Abstract in a third language
+ 	\DocNResumosExtra{0} % set to 1 (0 = NO extra abstract)
+	\DocAbstractExtraName{PALAVRA RESUMO NA TERCEIRA L\'{I}NGUA}
+	\DocTituloExtra{TITULO NA TERCEIRA LINGUA}
+	\DocResumoExtra{ %
+	Tradução do resumo para uma terceira língua.
+	}
+	\DocKeywordsExtra{Primeira palavra; Segunda; ...; Última.}

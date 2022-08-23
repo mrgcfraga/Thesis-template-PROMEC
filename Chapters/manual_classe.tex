@@ -1,0 +1,59 @@
+\chapter{UTILIZAÇÃO DA CLASSE}
+A classe \texttt{promec.cls}, disponibilizada com esse arquivo, é a responsável pela determinação das margens, paginação, inclusão de comandos adicionais, e todos os demais aspectos necessários para se produzir uma dissertação, tese ou qualificação que esteja de acordo com as exigências de formatação do PROMEC. Instruções para a utilização da classe são apresentadas aqui.
+
+\section{Especificação da classe}\label{Sec:especificacao-classe}
+A classe é invocada em um documento através do comando
+\textbackslash\lstinline!documentclass[options]{tepromec}!. Como é padrão em \LaTeX, este comando deve ser colocado no preâmbulo do documento, preferencialmente na primeira linha. Alguns argumentos opcionais estão disponíveis (em \lstinline![options]!):
+\begin{itemize}
+    \item \lstinline![frame]!: desenha, em todas as páginas do documento, caixas ao redor do elementos do texto, o que é particularmente útil para identificar linhas com erros de \texttt{overfull hbox} e \texttt{underfull hbox}. No entanto, na versão do texto entregue para a banca, ou na versão final, esta opção \textbf{não} deve estar ativada
+    \item \lstinline![ptbr]!: deve ser incluída caso o texto seja produzido em português. Altera todos os elementos necessários para produzir o documento neste idioma
+\end{itemize}
+
+\section{Comandos adicionais}
+Diversos comandos foram adicionados pela classe e são necessários para a correta formatação de elementos pré-textuais. Estes comandos devem ser inseridos no preâmbulo do documento. A lista de comandos e seus significados são dados na \cref{Tab:comandos-adicionais}.
+\begin{table}[tb]
+    \centering
+    \caption{Comandos adicionais introduzidos pela classe \texttt{promec.cls}}
+    \label{Tab:comandos-adicionais}
+    \begin{tabular}{lp{8cm}}
+        \toprule
+        Comando & Significado \\
+        \midrule
+        \lstinline!\DocTitulo! & Título do texto em português \\
+        \lstinline!\DocData! & Data (mês e ano, em português) \\
+        \lstinline!\DocDataEng! & Data (mês e ano, em inglês) \\
+        \lstinline!\DocDataB! & Data (dia, mês e ano, em português) \\
+        \lstinline!\DocOrientador! & Nome do orientador \\
+        \lstinline!\DocNoCoorientador! & Número de coorientadores \\
+        \lstinline!\DocCoorientador! & Nome do coorientador \\
+        \lstinline!\DocAreaConc! & Área de concentração do trabalho \\
+        \lstinline!\DocAutor! & Nome do autor \\
+        \lstinline!\DocAutorTitle! & Título prévio do autor (bacharel, mestre, etc.) \\
+        \lstinline!\DocBanca! & Nome dos membros da banca \\
+        \lstinline!\DocCoord! & Nome do coordenador do PROMEC \\
+        \lstinline!\DocMScouDr! & Tipo do documento (opções ``Mestre'', ``Doutor'', ou ``Qualifica'') \\
+        \lstinline!\DocDef!  & Estado do documento (opções ``Avaliacao'' ou ``Aprovado'') \\ 
+        \lstinline!\DocTituloIng! & Título do documento em inglês \\
+        \lstinline!\DocResumo! & Resumo do trabalho, em português \\
+        \lstinline!\DocPalavrasChave! & Palavras-chave, em português \\
+        \lstinline!\DocAbstract! & Resumo do trabalho, em inglês \\
+        \lstinline!\DocKeywords! & Palavras-chave, em inglês \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Pacotes adicionais}
+Diversos pacotes estão inclusos na classe \texttt{promec.csv} para a conveniência do usuário. São eles:
+\begin{itemize}
+    \item \lstinline!cleveref!: torna referenciação cruzada mais conveniente (ver \cref{Sec:referencias-cruzadas})
+    \item \lstinline!siunitx!: para a impressão de números e unidades
+    \item \lstinline!booktabs!: para a impressão de tabelas
+    \item \lstinline!subcaption!: inclui o recurso de sub-figuras
+    \item \lstinline!physics!: aumenta os comandos disponíveis para a impressão de operações matemáticas
+    \item \lstinline!mhchem!: para a impressão de elementos e fórmulas químicas
+\end{itemize}
+Informações sobre os comandos disponibilizados por cada pacote e sua utilização podem ser encontradas na documentação dos pacotes (que podem ser encontrados no \textit{website} \href{https://ctan.org/?lang=en}{CTAN}).
+
+\section{Suporte adicional}
+Informação adicional sobre a utilização do \LaTeX\ pode ser encontrada nos diversos livros a respeito da linguagem (por exemplo, \citealp{lamport1994latex,oetiker2015not}). Para a solução de possíveis problemas de compilação e para instruções em comandos específicos, sugere-se os diversos fóruns \textit{online}, em especial o \href{https://tex.stackexchange.com/}{Stack Exchange}.
+

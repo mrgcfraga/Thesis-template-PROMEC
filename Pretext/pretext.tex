@@ -1,0 +1,45 @@
+\frontmatter
+\pdfbookmark{Title Page}{Title_PDF}
+\maketitle % Generates the first and second PROMEC pages
+
+%--------------------------------------
+% Aknowledgements (final version only)
+%--------------------------------------
+\cleardoublepage\phantomsection
+\pdfbookmark{\ackname}{Acknowledgments_PDF}
+\input{Pretext/acknowledgments.tex}
+
+%-------------------------------------------
+% Abstract (in as many languages as needed)
+%-------------------------------------------
+\makeresumos
+
+%-------------------
+% Table of contents
+%-------------------
+\cleardoublepage\phantomsection
+\pdfbookmark{\contentsname}{Contents_PDF}
+\tableofcontents
+
+%-------
+% Lists
+%-------
+\cleardoublepage\phantomsection
+\pdfbookmark{\listfigurename}{Figures_PDF}
+\listoffigures
+
+\cleardoublepage\phantomsection
+\pdfbookmark{\listtablename}{Tables_PDF}
+\listoftables
+
+\cleardoublepage\phantomsection
+\pdfbookmark{\laaname}{Acronyms_PDF}
+\input{Pretext/list_of_acronyms}
+
+\cleardoublepage\phantomsection
+\pdfbookmark{\losname}{Symbols_PDF}
+\input{Pretext/list_of_symbols}
+
+%---------------------------------------
+% This ends the pre-text content.
+\mainmatter

@@ -1,0 +1,283 @@
+\chapter{REGRAS DE FORMATAÇÃO}\label{Cap:fundamentacao-teorica}
+A seguir são apresentadas as disposições gerais quanto a formatação de teses e dissertações. O presente modelo foi construído empregando a linguagem {\LaTeX}. O leitor perceberá que, para propiciar uma melhor compreensão da sintaxe empregada, fragmentos do código fonte utilizado são ocasionalmente apresentados. Mais detalhes podem evidentemente ser encontrados consultando os arquivos \texttt{.tex} incluídos.
+
+A distribuição \textit{{\TeX} Live 2016} \citep{rahtz2016livetex} foi empregada para a preparação deste documento. Qualquer editor {\TeX} deve ser compatível com este modelo. Contudo, somente os editores \textit{{\TeX}Maker} (v.4.5 \& Qt4) e \textit{{\TeX}Studio} (v.2.12.2 \& Qt5) foram testados. Recomenda-se para um usuário inexperiente em \LaTeX\ elabore seu documento usando o \textit{website} \href{https://www.overleaf.com}{Overleaf}.
+
+\section{Recomendações Gerais}
+As teses e dissertações devem empregar a fonte serifada Times New Roman. Em \LaTeX, versões dessa fonte para texto e matemática estão disponíveis através dos pacotes \texttt{newtxtext} e \texttt{newtxmath}, respectivamente (já incluídos na classe \texttt{promec.cls}). O tamanho de fonte deve ser definido como \SI{12}{pt} com um espaçamento entre linhas de \num{1.5}. As margens do texto devem ser estar de acordo com as normas da ABNT, conforme listado na \cref{Tab:margens}.
+\begin{table}[tb]
+    \centering
+    \caption{Margens do documento}
+    \begin{tabular}{cccc}
+        \toprule
+        Margem superior & Margem inferior & Margem esquerda & Margem direita  \\
+        \midrule
+        \SI{3}{\centi\meter} & \SI{2}{\centi\meter} & \SI{3}{\centi\meter} & \SI{2}{\centi\meter} \\
+        \bottomrule
+    \end{tabular}
+    \label{Tab:margens}
+\end{table}
+
+Ao longo do texto será usado o estilo simples, reservando-se o \textbf{negrito} para os títulos e subtítulos e o \textit{itálico} para realce de novos termos ou de termos em língua estrangeira. Deve-se empregar papel em tamanho A4, utilizando apenas um lado da folha. O texto deve ser escrito em linguagem impessoal de acordo com a norma culta e em conformidade com a reforma ortográfica da língua portuguesa de 2009 \citep{bechara2012moderna}.
+
+\section{Paginação}
+Todas as páginas pré-textuais devem ser contadas para numeração (incluindo capa). Contudo, somente a partir da contra-capa (inclusa) se inicia a numeração das páginas pré-textuais. Essa numeração deve empregar algarismos romanos em caixa baixa e centralizados na base da página. As páginas referentes ao corpo do texto devem ser numeradas utilizando algarismos arábicos, em sequência progressiva crescente, excluindo-se todas as páginas pré-textuais. A numeração deve estar localizada no canto superior direito a \SI{2}{\centi\meter} da borda da página. Normalmente, a primeira página textual a ser numerada é a da Introdução, a qual inicia a contagem no número \num{1} (um). Anexos e/ou apêndices devem ser numerados em continuidade as páginas textuais, sem reiniciar a contagem.
+
+Controle da paginação é feito automaticamente pela classe \texttt{promec.cls}. Dois comandos são disponibilizados nesse sentido: \lstinline!\frontmatter! e \lstinline!\mainmatter!, que devem ser posicionados antes do início dos elementos pré-textuais e antes do corpo do texto, respectivamente. Nos arquivos \texttt{.tex} de exemplo, esses comandos já estão incluídos (ver em \texttt{Pretext/pretext.tex}).
+
+Os capítulos devem ser numerados utilizando algarismos arábicos. Suas seções e subseções seguem a mesma sequência de numeração, empregando pontos (.) como separador. Os títulos dos capítulos devem ser escritos em CAIXA ALTA e em \textbf{negrito}. Títulos de seções e sub-seções também empregam \textbf{negrito}, porém somente a primeira letra de cada palavra é escrita em CAIXA ALTA. Note que todos esses pontos são resolvidos automaticamente pela classe \texttt{promec.cls}, \textbf{exceto} a capitalização dos títulos dos capítulos e seções; portanto, o usuário deve garantir que os títulos estejam capitalizado (isto é, deve-se escrever ``INTRODUÇÃO'' e não ``Introdução'').
+
+\section{Citações}
+A citação de trabalhos científicos deve ser realizada de modo a referenciar o autor (fonte) de determinada afirmação (fato, experimento, teoria, ...). Citações devem ser compreendidas no corpo do texto, podem ser realizadas de forma direta ou indireta. Não deve-se usar notas de rodapé\footnote{Notas de rodapé devem apresentar informações de fim meramente complementar. Essas notas são posicionados na margem inferior da página onde ocorrem.} para esta finalidade.
+
+\subsection{Citações Diretas}
+As citações diretas apresentam o nome do autor seguido pelo ano de sua respectiva publicação. Exemplos deste tipo de citação são enumerados a seguir:
+\begin{enumerate}[label={\roman*.},ref={\roman*}]
+	\item ``\ldots conforme apresentado por \citealp{dantzig1963linear}, a programação linear\ldots''
+	\item ``\ldots de acordo com \citealp{haftka1991elements}, o método de otimização\ldots''
+	\item ``Os resultados obtidos por \citealp{deleon2015stress} demonstram\ldots''\label{item:multiplos-autores}
+\end{enumerate}
+Quando o trabalho a ser referenciado possuir mais de dois autores (Item \ref{item:multiplos-autores}), a citação é realizada apresentando o nome do autor principal seguido da expressão “et alli” (ou abreviadamente “et al.”) e a data. Citações diretas podem ser obtidas empregando o comando \lstinline!\citealp{}!, onde o termo entre chaves deve apresentar o identificador de uma referência previamente contida no arquivo de bibliografias Bib\TeX. No presente modelo, o nome do arquivo contendo todas as referências é \texttt{bibliografia{\_}template.bib} e ele está localizado na pasta \texttt{Preparatory}. 
+
+\subsection{Citações Indiretas}
+Citações indiretas apresentam o autor de determinada referência sem fazer menção a ele explicitamente. Deste modo, a citação é realizada envolvendo por colchetes o nome do autor seguido pela data. Alguns exemplos dessa técnica são enumerados da seguinte forma:
+\begin{enumerate}[label={\roman*.},ref={\roman*}]
+	\item ``\ldots foi o trabalho que ajudou a cunhar o método através de sua aplicação em um problema de engenharia \citep{bathe1996finite}.''
+	\item ``\ldots definido como o Método dos Elementos Finitos, MEF \citep{hughes2012finite}.''
+	\item ``\ldots conforme apresentado por diferentes autores \citep{reddy2006introduction, zienkiewicz2005finite, bathe1996finite}.''
+	\item ``\ldots essa formulação para contato \citep{man1993incremental} também é empregada por outros trabalhos presentes na literatura \citep{man1993engineering}.''\label{item:same_authors}
+\end{enumerate}
+Esse tipo de citação é obtido empregando o comando \lstinline!\citep{}!. Note a existência de dois trabalhos do mesmo autor(es) publicados no mesmo ano (Item \ref{item:same_authors}). Em casos como esse, deve-se proceder adicionando caracteres latinos (em ordem alfabética) diretamente após a data de cada citação. 
+
+\section{Transcrições}
+Em casos de citação de trechos parciais ou completos de algum trabalho, deve-se proceder transcrevendo o texto desejado em parágrafo próprio envolvendo o texto por aspas (`` ''). Nessas situações a referência pode ser feita de forma direta ou indireta. A seguinte transcrição\footnote{Tradução livre do texto originalmente publicado em Inglês.} de um pronunciamento do astronauta John Glenn\footnote{John Glenn foi o segundo astronauta a entrar em órbita terrestre. Este feito foi realizado em 1962 a bordo da cápsula espacial Friendship 7} exemplifica esse tipo de citação:
+``Acho que a pergunta mais frequente que escuto é: `Quando você estava sentado naquela cápsula ouvindo a contagem regressiva, como você se sentiu?' Bem, a resposta é fácil. Eu me senti exatamente como você se sentiria caso estivesse se preparando para o lançamento sabendo que você está sentado em cima de dois milhões de peças---todas construídas pelo licitante que ofereceu o menor preço em um contrato do governo.'' \citep{kranz2009failure}
+
+\section{Equações}
+Equações devem ser centralizadas horizontalmente. Todas as equações que vierem a ser utilizadas/citadas posteriormente a sua aparição no texto devem ser numeradas. Essa numeração empregará algarismos arábicos em ordem crescente. O formato da numeração seguirá a sequência de numeração do capítulo em que a equação é apresentada e será compreendida entre parênteses, indexada como Capítulo.Equação. Por fazerem parte do texto, equações não devem simplesmente surgir ao acaso, elas precisam ser introduzidas no contexto no trabalho e estão sujeitas as regras de pontuação.
+
+Como um primeiro exemplo, é apresentado o teorema de Pitágoras. Para um triângulo retângulo com catetos $a$ e $b$ e hipotenusa $c$, este teorema estabelece que
+\begin{equation}
+    a^2 + b^2 = c^2\,.
+    \label{Eq:pitagoras}
+\end{equation}
+Esta equação foi produzida empregando a sintaxe
+\begin{lstlisting}
+\begin{equation}
+    a^2 + b^2 = c^2\,.
+    \label{Eq:pitagoras}
+\end{equation}
+\end{lstlisting}
+e ela ilustra alguns pontos importantes de formatação e boas-práticas. Primeiramente, note que a \cref{Eq:pitagoras} faz parte da frase que começa ``Para um triângulo\ldots''; como pontuado anteriormente essa é a forma correta de se introduzir qualquer equação---citar a equação pelo seu número \textbf{antes} de ela ter sido introduzida não é correto. Como exemplo do que \textbf{não deve} ser feito, considere o próximo parágrafo sobre a fórmula quadrática.
+
+A fórmula quadrática, ou fórmula de Bhaskara, permite encontrar as raízes de um polinômio de segunda ordem. Ela é dada pela \cref{Eq:bhaskara}.
+\begin{equation}
+    x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2c}
+    \label{Eq:bhaskara}
+\end{equation}
+
+Retornando à \cref{Eq:pitagoras}, como esta equação faz parte do texto, ela é pontuada. No caso, como a \cref{Eq:pitagoras} encerra uma frase, coloca-se um ponto final ao final da equação. Recomenda-se que um pequeno espaço horizontal seja inserido entre o fim da equação e o ponto final, para evitar que um leitor pense que o ponto final é um sinal que faz parte da equação. Tal espaço horizontal foi inserido através do comando \lstinline!\,!.
+
+Além disso, todas variáveis presentes na \cref{Eq:pitagoras} foram definidas antes da equação ser introduzida. Não é necessário que as variáveis sejam definidas \textbf{antes} da equação, mas, caso isso não seja feito, elas devem ser definidas imediatamente após à equação (ver os próximos exemplos). É obrigatória que uma completa Lista de Símbolos esteja presente no texto, como um dos elementos pré-textuais. Note que nem todas as variáveis da \cref{Eq:bhaskara} foram definidas explicitamente; essa é mais uma instância na qual a apresentação dessa equação foi feita incorretamente.
+
+Ocasionalmente pode ser necessário apresentar duas ou mais equações em sucessão. A forma recomendada de se fazer isso é com o ambiente \lstinline!gather!. Por exemplo, considere as definições de velocidade $V$ e aceleração $a$, dadas respectivamente como
+\begin{gather}
+    V = \dv{x}{t}\,, 
+    \label{Eq:velocidade}\\[12pt]
+    a = \dv{V}{t} = \dv[2]{x}{t}\,,
+    \label{Eq:aceleracao}
+\end{gather}
+onde $x$ é a posição e $t$ é o tempo. Estas equações foram produzidas através da seguinte sintaxe:
+\begin{lstlisting}
+\begin{gather}
+    V = \dv{x}{t}\,, 
+    \label{Eq:velocidade}\\[12pt]
+    a = \dv{V}{t} = \dv[2]{x}{t}\,,
+    \label{Eq:aceleracao}
+\end{gather}
+\end{lstlisting}
+O comando \lstinline!\\[12pt]! serve para quebrar a linha entre as duas equações e inserir um espaço vertical adequado entre elas (igual ao tamanho da fonte do texto). Note ainda que ambas as equações estão devidamente pontuadas.
+
+Equações podem também ser apresentadas em grupos usando o ambiente \lstinline!subequations!. Como exemplo, considere as seguintes séries infinitas,
+\begin{subequations}
+    \begin{equation}
+        \frac{\pi}{2} = \sum_{k=0}^{\infty} \frac{k!}{\pqty{2k + 1}!!}\,,
+    \end{equation}
+    \begin{equation}
+        \pi = 3 + \frac{1^2}{6 + \frac{3^2}{6+\frac{5^2}{6+\frac{7^2}{6+\ddots}}}}\,.
+    \end{equation}
+\end{subequations}
+Essas equações foram obtidas usando a sintaxe
+\begin{lstlisting}
+\begin{subequations}
+    \begin{equation}
+        \frac{\pi}{2} = \sum_{k=0}^{\infty} 
+            \frac{k!}{\pqty{2k + 1}!!}\,,
+    \end{equation}
+    \begin{equation}
+        \pi = 3 + \frac{1^2}{6 + 
+            \frac{3^2}{6+\frac{5^2}{6+
+                \frac{7^2}{6+\ddots}}}}\,.
+    \end{equation}
+\end{subequations}
+\end{lstlisting}
+
+Sempre que alguma grandeza for explicitada no texto ou em uma equação, as unidades devem ser apresentadas seguindo o Sistema Internacional (SI). Em casos excepcionais, nos quais se faz necessário o emprego de unidades em sistemas que não o SI, a grandeza equivalente no SI deve ser apresentada. Vide exemplo: ``\ldots foram empregadas placas metálicas com meia polegada de espessura (\SI{12.7}{\milli\meter}).''
+
+\section{Figuras}\label{Sec:figuras}
+Figuras devem ser apresentadas tão próximo quando possível da primeira posição em que elas são referenciadas. Não é necessário que elas apareçam após tal posição, desde que sejam mantidas na mesma página (nunca em uma página anterior, e nunca duas páginas após a posição de primeira referência). Caso o usuário deseje forçar que a figura apareça necessariamente após a posição de primeira referência, ele pode incluir o pacote \lstinline!flafter! no preâmbulo do documento.
+
+Uma exemplo de figura é mostrado na \cref{Fig:figura_exemplo}.
+\begin{figure}[tb]
+    \centering
+    \includegraphics{example-image-a}
+    \caption{Exemplo de figura}
+    \label{Fig:figura_exemplo}
+\end{figure}
+Todas as figuras devem possuir uma legenda, posicionada logo abaixo da figura e centralizada horizontalmente. Cada figura deve estar numerada seguindo indexação similar {a} das equações; a palavra ``Figura'' deve preceder o número e um travessão (--) deve ser colocado entre o número e o texto da legenda.
+
+O parágrafo anterior foi gerado seguindo a sintaxe (alguns aspectos foram alterados em relação ao código-fonte original para facilitar a leitura)
+\begin{lstlisting}[breaklines=true]
+Uma exemplo de figura \'{e} mostrado na \cref{Fig:figura_exemplo}.
+\begin{figure}[tb]
+    \centering
+    \includegraphics{example-image-a}
+    \caption{Exemplo de figura}
+    \label{Fig:figura_exemplo}
+\end{figure}
+Todas as figuras devem possuir uma legenda, posicionada logo abaixo da figura e centralizada horizontalmente. 
+Cada figura deve estar numerada seguindo indexa\c{c}\~{a}o similar \`{a} das equa\c{c}\~{o}es; a palavra ``Figura'' deve preceder o n\'{u}mero e um travess\~{a}o (--) deve ser colocado entre o n\'{u}mero e o texto da legenda.
+\end{lstlisting}
+Note que:
+\begin{itemize}
+    \item O comando \lstinline!\centering! é incluído para garantir que a figura e a legenda fiquem centralizados
+    \item O comando \lstinline!\caption{}! é colocado \textbf{após} a inclusão da figura (\lstinline!\includegraphis{}!); este é o correto para figuras
+    \item O ambiente \lstinline!figure! tem como argumentos opcionais de posicionamento \lstinline![tb]!. É recomendado que estes sejam sempre os argumentos utilizados para \textit{floats} como figuras e tabelas, pois garantem o melhor posicionamento destes elementos (no topo ou no final da página). Não é recomendado utilizar-se o argumento \lstinline![h]!
+    \item O ambiente \lstinline!figure! é inserido imediatamente após o final da frase em que a figura é primeiro citada, e não após o final do parágrafo. Isso assegura o melhor posicionamento da figura no PDF
+\end{itemize}
+
+Figuras compostas de subfiguras podem também ser incluídas utilizando o pacote \lstinline!subcaption! Um exemplo é mostrado na \cref{Fig:subfigura_exemplo}.
+\begin{figure}[tb]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-b}
+        \caption{Uma subfigura}
+        \label{Fig:subfigura-a}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-c}
+        \caption{Outras subfigura}
+        \label{Fig:subfigura-b}
+    \end{subfigure}
+    \caption{Exemplo de múltiplas figuras}
+    \label{Fig:subfigura_exemplo}
+\end{figure}
+O segmento de código usado para gerar essas figuras é mostrado a seguir.
+\begin{lstlisting}
+\begin{figure}[tb]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-b}
+        \caption{Uma subfigura}
+        \label{Fig:subfigura-a}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{example-image-c}
+        \caption{Outras subfigura}
+        \label{Fig:subfigura-b}
+    \end{subfigure}
+    \caption{Exemplo de m\'{u}ltiplas figuras}
+    \label{Fig:subfigura_exemplo}
+\end{figure}
+\end{lstlisting}
+Para mais instruções sobre o uso do ambiente \lstinline!subfigure!, o leitor é direcionado ao manual do pacote \lstinline!subcaption!.
+
+Note que tanto as figuras principais (\cref{Fig:figura_exemplo,Fig:subfigura_exemplo}) como as subfiguras no exemplo anterior (\cref{Fig:subfigura-a,Fig:subfigura-b}) podem ser facilmente referenciadas desde que \lstinline!label{}!s tenham sido dados a cada uma delas. A forma correta de se realizar referenciação cruzada na classe \texttt{promec.cls} é discutida na \cref{Sec:referencias-cruzadas}.
+
+\section{Tabelas}
+Um exemplo de tabela é mostrado na \cref{Tab:exemplo}.
+\begin{table}[tb]
+    \centering
+    \caption{Exemplo de tabela}
+    \label{Tab:exemplo}
+    \begin{tabular}{cc}
+        \toprule
+        Coluna 1 & Coluna 2 \\
+        \midrule
+        Dados 1 & Dados 2 \\
+        Dados 3 & Dados 4 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+A sintaxe usada para produzir essa tabela é mostrada abaixo.
+\begin{lstlisting}
+\begin{table}[tb]
+    \centering
+    \caption{Exemplo de tabela}
+    \label{Tab:exemplo}
+    \begin{tabular}{cc}
+        \toprule
+        Coluna 1 & Coluna 2 \\
+        \midrule
+        Dados 1 & Dados 2 \\
+        Dados 3 & Dados 4 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\end{lstlisting}
+
+As mesmas instruções e recomendações gerais dadas para o posicionamento e a formatação de figuras na \cref{Sec:figuras} são válidas também para tabelas. Uma diferença importante é que, para tabelas, a legenda deve vir \textbf{antes} da tabela, e não depois. Isso é obtido posicionando-se o comando \lstinline!\caption{}! antes da inserção do conteúdo da tabela.
+
+Além disso, lista-se abaixo algumas recomendações de boas-práticas para a confecção de tabelas para trabalhos científicos.
+\begin{itemize}
+    \item Evite linhas verticais separando as colunas
+    \item Evite também linhas horizontais separando as fileiras das tabelas, com exceção de uma linha no topo, uma ao final, e uma separando o cabeçalho do corpo da tabela. Sugere-se o uso dos comandos \lstinline!\toprule!, \lstinline!\bottomrule!, e \lstinline!\midrule! para produzir tais linhas, respectivamente. Esses comandos são parte do pacote \lstinline!booktabs!, que é incluído como parte da classe \texttt{promec.cls}
+    \item Evite colocar bordas na tabela
+    \item A fonte da tabela deve ser a mesma do corpo do texto
+    \item Não coloque o texto no cabeçalho em negrito
+    \item Na dúvida, alinhe o texto de todas as células à esquerda
+    \item Inclua todas as unidades na tabela sempre que possível (e não na legenda)
+\end{itemize}
+
+\section{Referências Cruzadas}\label{Sec:referencias-cruzadas}
+Referências cruzadas consistem em referências a outros elementos do texto dentro do próprio texto---por exemplo, ao \cref{Cap:introducao}, à \cref{Fig:figura_exemplo}, às \cref{Eq:pitagoras,Eq:bhaskara}, etc. Referências cruzadas são inevitáveis em textos acadêmicos. Na classe \texttt{promec.cls}, todos (ou quase todos, ver abaixo) os elementos podem ser referenciados através de um único comando, \lstinline!\cref{}!, parte do pacote \lstinline!cleveref!, que já é incluído na classe. Este comando permite referenciar um ou múltiplos elementos do texto---por exemplo, as referências feitas no início desse parágrafo foram geradas seguindo a seguinte sintaxe:
+\begin{lstlisting}[breaklines=true]
+por exemplo, ao \cref{Cap:introducao}, \'{a} \cref{Fig:figura_exemplo}, \'{a}s \cref{Eq:pitagoras,Eq:bhaskara}, etc
+\end{lstlisting}
+
+As referências cruzadas produzidas usando o comando \lstinline!\cref{}! estão automaticamente no formato exigido para as dissertações e teses do PROMEC. O comando também se adapta adequadamente aos idiomas inglês e português (a produção de documentos nestes dois idiomas é discutida na \cref{Sec:especificacao-classe}). 
+
+A maioria dos elementos textuais podem ser referenciados usando o comando \lstinline!\cref{}!. No entanto, existem as seguintes exceções:
+\begin{enumerate}
+    \item Anexos
+    \item Números de página
+    \item Itens em listas
+\end{enumerate}
+Referências a estes elementos devem ser feitas da forma tradicional em \LaTeX, usando o comando \lstinline!\ref{}! antecedido pelo nome do elemento.
+
+\section{Elementos pré-textuais}
+Certos conteúdos devem ser obrigatoriamente inclusos antes do corpo principal do texto. Outros conteúdos pré-textuais são opcionais, e, caso o autor desejar, devem ser incluídos apenas na versão já aprovada do texto. Estes elementos são listados a seguir.
+\begin{enumerate}
+    \item Página título (obrigatória): caso o documento seja escrito em português, apenas uma página de título deve ser incluída. Caso o documento seja escrito em inglês, duas páginas de título devem ser incluídas: a primeira, com todos os textos, em inglês; e a segunda, em português. A(s) página(s) de título são as únicas páginas do documento que não devem ser numeradas
+    \item Página de rosto (obrigatória), contendo informações importantes sobre o trabalho: a área de concentração, nome do orientador e coorientador, banca, nome do atual coordenador do PROMEC, entre outras
+    \item Agradecimentos (opcional), devendo ser escrita seguindo a mesma formatação do texto no corpo do documento. Para pesquisadores bolsistas, um agradecimento à agência de fomento responsável pela bolsa é obrigatório
+    \item Resumo em português (obrigatório), devendo ser escrito em um único parágrafo sem indentação, respeitando um máximo de \num{500} palavras. As palavras-chave do trabalho também são incluídas nesta página. O resumo, em conjunto com a lista de palavras-chave, não deve exceder uma página
+    \item Resumo em inglês (obrigatório), ou \textit{Abstract}. Consiste na tradução livre do conteúdo no resumo, e as mesmas orientações gerais daquele elemento se aplicam a esse
+    \item Índice (obrigatório), autoexplicativo
+    \item Lista de figuras (obrigatório), autoexplicativo
+    \item Lista de tabelas (obrigatório), autoexplicativo
+    \item Lista de acrônimos e abreviações (obrigatório). Deve listar, em ordem alfabética, todos os acrônimos e abreviações usados no texto e dar os seus significados
+    \item Lista de símbolos (obrigatório). Deve listar todos os símbolos usados no texto, incluindo subscritos e sobrescritos e símbolos para operadores (por exemplo, médias, tensores). Os símbolos devem estar separados em listas de acordo com as categorias (nesta ordem): símbolos latinos, símbolos gregos, subscritos, sobrescritos, operadores. Em cada categoria, os símbolos devem estar listados em ordem alfabética
+\end{enumerate}
+A maioria desses elementos são inseridos através de comandos e não precisam ser montados pelo usuário. As exceções são os elementos opcionais, os resumos, a listas de acrônimos e abreviações, e a lista de símbolo. Sugere-se que o usuário verifique o arquivo \texttt{Pretext/pretext.tex} para um melhor entendimento sobre a preparação de cada elemento.
+
+\section{Elementos pós-textuais}
+Imediatamente após o corpo principal do texto, a lista de referências à trabalhos anteriores deve ser incluída como um capítulo separado (não numerado). A impressão da lista de referências bibliográficas é gerenciada pelo próprio \LaTeX, sendo necessário apenas que o usuário prepare um arquivo \texttt{.bib} de forma adequada (ver o Apêndice~\ref{Cap:bib}).
+
+Em seguida, opcionalmente pode-se incluir apêndices e anexos (nesta ordem). Estes elementos são incluídos com a mesma sintaxe de capítulos, e eles podem incluir seções e subseções. No entanto, apêndices são numerados por letras latinas maiúsculas, começando pelo Apêndice A; seções e subseções seguem a numeração padrão, então pode-se ter uma Seção A.1, uma Subseção A.1.1, etc. Anexos, por sua vez, são numerados números gregos maiúsculos, começando pelo Anexo I (e segue-se uma Seção I.1, uma subseção I.1.1, etc.).
+
+A formatação de apêndices e anexos é feita no presente \textit{template} através dos comandos \lstinline!\appendix! e \lstinline!\annex!. O comando \lstinline!\appendix! deve ser colocado antes do primeiro apêndice (e apenas uma única vez no documento); o comando \lstinline!\annex!, antes do primeiro anexo, e também apenas uma única vez no documento.

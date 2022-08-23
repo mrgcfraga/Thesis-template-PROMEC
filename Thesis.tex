@@ -1,0 +1,45 @@
+\documentclass[ptbr]{promec}	%Document class specification
+
+%-------------------
+% Preparatory files
+%-------------------
+\input{Preparatory/packages.tex}			%Packages
+\input{Preparatory/settings.tex}			%Settings
+\input{Preparatory/custom_commands.tex}	%New commands and environments
+
+%-------------
+% Frontmatter
+%-------------
+\input{Preparatory/information.tex} 	%Author and pre-text information
+
+\begin{document}
+    \allowdisplaybreaks
+
+    %----------
+    % Pre-text
+    %----------
+    \input{Pretext/pretext.tex} 
+
+    %----------
+    % Chapters
+    %----------
+    \input{Chapters/introducao.tex}
+    \input{Chapters/regras_formatacao.tex}
+    \input{Chapters/manual_classe.tex}
+               
+    %------------
+    % Backmatter
+    %------------
+    \input{Chapters/references}
+
+    %Appendices
+    \appendix
+    \input{Chapters/arquivo_bibliografia.tex}
+    \input{Chapters/apendiceB_exemplo.tex}
+    
+    %Annexes
+    \annex
+    \input{Chapters/anexoI_exemplo.tex}
+    \input{Chapters/anexoII_exemplo.tex}
+    
+\end{document}
